@@ -1,0 +1,17 @@
+<template name="GameBoard">
+    <h2>Игровая доска</h2>
+
+    <p>Ходят: {{whoIsPlaying}}</p>
+    {{#each row in boards}}
+        {{#let rowIndex=@index}}
+        <div class="row">
+            {{#each cell in row}}
+                <span class="cell" data-row-index="{{rowIndex}}" data-cell="{{@index}}">
+                    {{cell}}
+                </span>
+            {{/each}}
+        </div>
+        {{/let}}
+    {{/each}}
+    <p>Выиграли: {{whoWon}}</p>
+</template>
